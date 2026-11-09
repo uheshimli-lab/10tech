@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>10tech — промо</title>
+<style>
+:root{--bg:#07080d;--fg:#f4f6ff;--mut:#8b92b0;--a:#00e5a8;--b:#ff3d9a;--c:#6c5cff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root{--bg:#07080d;--fg:#f4f6ff}}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body{display:flex;align-items:center;justify-content:center}
+#stage{position:relative;height:min(100%,calc((100vw)*16/9));aspect-ratio:9/16;max-width:100vw;overflow:hidden;background:radial-gradient(120% 70% at 50% 0%,#1a1440 0%,var(--bg) 60%);container-type:size;border-radius:2cqw}
+.scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8cqw;opacity:0;transform:scale(1.06);transition:opacity .35s,transform .6s;pointer-events:none}
+.scene.on{opacity:1;transform:scale(1)}
+h1,h2,p{margin:0}
+.big{font-size:13cqw;font-weight:900;line-height:1.05;letter-spacing:-.02em}
+.mid{font-size:8cqw;font-weight:800;line-height:1.15}
+.sm{font-size:4.6cqw;color:var(--mut);margin-top:4cqw;line-height:1.4}
+.grad{background:linear-gradient(90deg,var(--a),var(--c),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo{font-size:22cqw;font-weight:900;letter-spacing:-.04em;position:relative}
+.on .logo{animation:glitch .9s steps(2) 1}
+@keyframes glitch{0%{text-shadow:2cqw 0 var(--b),-2cqw 0 var(--a);transform:skewX(8deg)}50%{text-shadow:-1cqw 0 var(--b),1cqw 0 var(--a);transform:skewX(-6deg)}100%{text-shadow:none;transform:none}}
+.pop{opacity:0;transform:translateY(4cqw)}
+.on .pop{animation:pop .5s forwards}
+.on .d1{animation-delay:.3s}.on .d2{animation-delay:.9s}.on .d3{animation-delay:1.5s}
+@keyframes pop{to{opacity:1;transform:none}}
+.tag{display:inline-block;border:.5cqw solid var(--a);color:var(--a);border-radius:10cqw;padding:1.5cqw 4cqw;font-size:4.4cqw;font-weight:700;margin-top:5cqw}
+.term{width:100%;background:#0d1020;border:.4cqw solid #232949;border-radius:3cqw;text-align:left;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:4cqw;overflow:hidden}
+.term .bar{background:#171c36;padding:2cqw 3cqw;display:flex;gap:1.5cqw}
+.term .bar i{width:2.6cqw;height:2.6cqw;border-radius:50%;background:#ff5f57}
+.term .bar i:nth-child(2){background:#febc2e}.term .bar i:nth-child(3){background:#28c840}
+#tbody{padding:4cqw;min-height:38cqw;line-height:1.6;white-space:pre-wrap;word-break:break-all;color:var(--a)}
+.cur{display:inline-block;width:2cqw;height:4.4cqw;background:var(--a);vertical-align:-.7cqw;animation:bl 1s steps(2) infinite}
+@keyframes bl{50%{opacity:0}}
+.warn{border:.5cqw solid var(--b);background:rgba(255,61,154,.1);border-radius:3cqw;padding:5cqw;margin-top:6cqw}
+.star{font-size:20cqw;display:inline-block}
+.on .star{animation:spin 1.2s ease-out}
+@keyframes spin{from{transform:rotate(-200deg) scale(.2)}to{transform:none}}
+.btn{margin-top:6cqw;background:linear-gradient(90deg,var(--c),var(--b));color:#fff;border-radius:10cqw;padding:3.5cqw 8cqw;font-size:5cqw;font-weight:800}
+#prog{position:absolute;left:0;top:0;height:1.2cqw;width:0;background:linear-gradient(90deg,var(--a),var(--b));z-index:5}
+#ui{position:absolute;bottom:3cqw;left:0;right:0;text-align:center;z-index:6}
+#ui button{font:inherit;font-size:3.6cqw;background:rgba(255,255,255,.12);color:var(--fg);border:0;border-radius:6cqw;padding:2cqw 5cqw;cursor:pointer}
+</style>
+</head>
+<body>
+<div id="stage">
+<div id="prog"></div>
+
+<section class="scene">
+<p class="sm pop" style="margin:0 0 4cqw">Привет, это</p>
+<h1 class="big pop d1">Мой <span class="grad">первый проект</span> с ИИ</h1>
+<p class="mid pop d2" style="margin-top:6cqw">и он уже вышел 🚀</p>
+</section>
+
+<section class="scene">
+<h1 class="logo grad">10tech</h1>
+<span class="tag pop d1">релиз project2.3</span>
+<p class="sm pop d2">открытый код на GitHub</p>
+</section>
+
+<section class="scene">
+<h2 class="mid pop" style="margin-bottom:6cqw">Запускается прямо <span class="grad">с телефона</span></h2>
+<div class="term pop d1"><div class="bar"><i></i><i></i><i></i></div><div id="tbody"></div></div>
+<p class="sm pop d3">туториал по Termux — в Telegram</p>
+</section>
+
+<section class="scene">
+<h2 class="mid pop">Всё по-честному</h2>
+<div class="warn pop d1">
+<p class="mid" style="font-size:6.4cqw">⚠️ На телефоне пока горит что-то розовое</p>
+<p class="sm" style="color:var(--fg)">Баг знаю — фиксы уже в работе</p>
+</div>
+<p class="sm pop d2">Следи за логом обновлений</p>
+</section>
+
+<section class="scene">
+<div class="star">⭐</div>
+<h2 class="mid pop d1" style="margin-top:4cqw">Будь первым — <span class="grad">поставь звезду</span></h2>
+<div class="btn pop d2">github.com/uheshimli-lab/10tech</div>
+<p class="sm pop d3">Лог обновлений: t.me/+pQCd_jiJp_w2N2Ey</p>
+</section>
+
+<div id="ui"><button id="re">↻ Повторить</button></div>
+</div>
+
+<script>
+(function(){
+var scenes=[].slice.call(document.querySelectorAll('.scene'));
+var dur=[3200,3600,6200,4200,5200];
+var total=dur.reduce(function(a,b){return a+b},0);
+var tb=document.getElementById('tbody'),prog=document.getElementById('prog');
+var timers=[],raf=0,t0=0;
+var lines=['$ git clone https://github.com/uheshimli-lab/10tech','$ cd 10tech','$ # готово ✓'];
+function clearAll(){timers.forEach(clearTimeout);timers=[];cancelAnimationFrame(raf)}
+function typeTerm(){
+ tb.textContent='';var full=lines.join('\n'),i=0;
+ (function step(){
+  if(i<=full.length){tb.textContent=full.slice(0,i);tb.insertAdjacentHTML('beforeend','<span class="cur"></span>');i++;timers.push(setTimeout(step,45))}
+ })();
+}
+function tick(){
+ var p=Math.min((performance.now()-t0)/total,1);
+ prog.style.width=(p*100)+'%';
+ if(p<1)raf=requestAnimationFrame(tick);
+}
+function play(){
+ clearAll();
+ scenes.forEach(function(s){s.classList.remove('on')});
+ void document.body.offsetWidth;
+ var at=0;
+ scenes.forEach(function(s,i){
+  timers.push(setTimeout(function(){
+   scenes.forEach(function(x){x.classList.remove('on')});
+   s.classList.add('on');
+   if(i===2)typeTerm();
+  },at+50));
+  at+=dur[i];
+ });
+ timers.push(setTimeout(function(){document.getElementById('ui').style.opacity=1},total));
+ document.getElementById('ui').style.opacity=1;
+ t0=performance.now();raf=requestAnimationFrame(tick);
+}
+document.getElementById('re').addEventListener('click',play);
+play();
+})();
+</script>
+</body>
+</html>
